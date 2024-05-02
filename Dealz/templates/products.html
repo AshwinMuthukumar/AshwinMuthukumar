@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}">
+    <title>Products</title>
+</head>
+<body>
+  <div id="preloader"></div>
+  <ul class="button1">
+    <li><a href="/Homepage" class="button1">Home</a></li>
+    <li><a href="/Guide" class="button1">Guide</a></li>  
+    <li><a href="/About" class="button1">About</a></li>  
+  </ul>
+  <p style="color:white">Search Result for "{{query}}" ({{size}})</p>
+  <div class="grid-container">
+    {% for product in data %}
+        <div class="product-card">
+            <span class="product-badge">{{ product[5] }}</span>
+            <img src="{{ product[3] }}" alt="{{ product[0] }}" class="product-image">
+            <p class="product-name">{{ product[0] }}</p>
+            <p class="product-price">{{ product[1] }}</p>
+            <p class="product-discount">{{ product[2] }}% off</p>
+            <a href="{{ product[4] }}" class="view-product-btn" target="_blank">View Product</a>
+        </div>
+    {% endfor %}
+</div>
+      <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        });
+    </script>
+</body>
