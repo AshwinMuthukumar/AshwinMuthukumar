@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTSA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/guide.css') }}">
+    <script src="https://kit.fontawesome.com/d751855a96.js" crossorigin="anonymous"></script>
+</head>
+<body >
+    <div id="preloader"></div>
+    <ul>
+        <li><a href="/Homepage">Home</a></li>
+        <li><a href="/Guide">Guide</a></li>  
+        <li><a href="/About">About</a></li>  
+      </ul>
+      <div class="textss">
+        <h1>
+            <br>
+            Steps
+        </h1>
+        <br>
+        <br>    
+        <h2><i>
+            <p>
+            Step I] Keyword: One can accesss the search bar in homepage. You can enter any keyword in the bar <br><br><br>
+            Step II] Set limit, The value you put would be the limit for counting the tweets <br><br><br>
+            Step III] After clicking on search you'll be directd to anohter page with contains the chart, Here you can see the results and evaluate.</p></i>
+        </h2>
+    </div>
+
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        });
+    </script>
+    
+</body>
+</html>

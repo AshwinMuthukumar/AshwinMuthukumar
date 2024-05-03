@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chart.css') }}">
+    <script src = "{{ url_for('static', filename='css/pie.js') }}"> </script>
+    <script src = "{{ url_for('static', filename='css/tweetss.js') }}"> </script>
+    <title>RTSA</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript">
+    var text = {{limit}};
+    </script>
+</head>
+<body>
+  <div id="preloader"></div>
+  <ul>
+    <li><a href="/Homepage">Home</a></li>
+    <li><a href="/Guide">Guide</a></li>  
+    <li><a href="/About">About</a></li>  
+  </ul>
+           <div class="container">			
+            <div class="centered">
+               <div >
+                 <canvas id="myChart"  width="450" height="450"></canvas>
+               </div>
+                 
+               <script> 
+               a = {{positive}}
+               b = {{negative}}
+               animateStart(a , b) 
+               </script>
+               <p>Total Tweets Counted :
+               <script type="text/javascript">
+                 document.write(text)
+               </script>
+               </p>
+             </div>
+           </div>
+           <br>
+            <br>
+           <div class="buttons">
+            <form action="/Tweets" method="post">
+            <button class = "button_h" role= "button" type="submit">Tweets</button>
+            </form>
+            <br>
+            <br>
+
+            <form action="/News" method="post">
+              <button class = "button_h" role= "button" type="submit" role="button">News</button>
+            </form>
+           </div>
+         
+           <script>
+            var loader = document.getElementById("preloader");
+    
+            window.addEventListener("load",function(){
+                loader.style.display = "none";
+            });
+        </script>
+
+           
+          
+
+  
+          
+</body>
+</html>
